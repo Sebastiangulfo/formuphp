@@ -1,8 +1,14 @@
 # Registro de Estudiantes — CRUD en PHP + MySQL
 
 Aplicación web simple con un formulario y operaciones **CRUD** (Crear, Leer,
-Actualizar, Eliminar) en PHP puro con PDO, conectada a **MySQL**. Lista para
-desplegar en **Railway**.
+Actualizar, Eliminar) en PHP puro con PDO, conectada a **MySQL**. Desplegada en
+**Railway**.
+
+🌐 **En vivo:** https://formuphp-cli-production.up.railway.app
+
+> Nota sobre el arranque: en Railway, el Apache de la imagen PHP daba el error
+> `More than one MPM loaded`. Por eso el `Dockerfile` usa la imagen `php:8.2-cli`
+> y arranca con el **servidor web integrado de PHP** (`php -S`), evitando Apache.
 
 ## Archivos
 
