@@ -1,0 +1,7 @@
+{
+    "name": "sebastian/productos",
+    "description": "CRUD de productos en PHP con MySQL",
+    "require": {
+        "php": ">=7.0"
+    }
+}
