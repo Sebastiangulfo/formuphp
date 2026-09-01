@@ -1,20 +1,13 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
 # Extensión para conectar a MySQL con PDO
 RUN docker-php-ext-install pdo pdo_mysql
 
-# PHP (mod_php) requiere el MPM prefork. Nos aseguramos de que sea el único
-# activo para evitar el error "More than one MPM loaded".
-RUN a2dismod mpm_event  2>/dev/null || true; \
-    a2dismod mpm_worker 2>/dev/null || true; \
-    a2enmod  mpm_prefork
-
-# Copia la app al directorio que sirve Apache
+WORKDIR /var/www/html
 COPY . /var/www/html/
 
-# Apache escuchará en el puerto que indique la variable APACHE_LISTEN_PORT.
-RUN sed -i 's/Listen 80/Listen ${APACHE_LISTEN_PORT}/' /etc/apache2/ports.conf \
- && sed -i 's/:80>/:${APACHE_LISTEN_PORT}>/'          /etc/apache2/sites-available/000-default.conf
+EXPOSE 8080
 
-# Railway asigna el puerto en $PORT; lo pasamos a Apache (8080 por defecto en local).
-CMD ["sh", "-c", "export APACHE_LISTEN_PORT=${PORT:-8080}; apache2-foreground"]
+# Servidor web integrado de PHP escuchando en el puerto de Railway ($PORT).
+# Evita Apache por completo (y su error "More than one MPM loaded").
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8080} -t /var/www/html"]
