@@ -4,7 +4,7 @@ Proyecto sencillo con un formulario que registra productos e imprime todos los
 datos en una tabla. Tiene CRUD (Crear, Leer, Actualizar, Borrar) y se conecta a
 una base de datos MySQL. Desplegado en Railway.
 
-🌐 En vivo: https://formuphp-cli-production.up.railway.app
+🌐 En vivo: https://productos-production-f99c.up.railway.app
 
 ## Archivos
 
