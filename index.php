@@ -3,14 +3,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Registro de Productos</title>
+    <title>Registro de estudiantes</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-<h1>Registro de Productos</h1>
+<h1>Registro de estudiantes</h1>
 
-<!-- Formulario para agregar un producto -->
+<!-- Formulario para agregar un estudiante -->
 <form action="guardar.php" method="POST">
     <input type="text" name="nombre" placeholder="Nombre del producto" required>
     <input type="number" step="0.01" name="precio" placeholder="Precio" required>
@@ -18,9 +18,9 @@
     <button type="submit">Guardar</button>
 </form>
 
-<h2>Productos registrados</h2>
+<h2>estudiantes registrados</h2>
 
-<!-- Tabla que imprime todos los productos -->
+<!-- Tabla que imprime todos los estudiantes -->
 <table>
     <tr>
         <th>ID</th>
