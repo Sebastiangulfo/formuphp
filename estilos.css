@@ -120,7 +120,12 @@ a:hover {
     opacity: 0.85;
 }
 
-/* En la tabla: el segundo enlace (Borrar) en rojo */
+/* En la tabla: el ultimo enlace (Borrar) en rojo */
 td a:last-of-type {
     background: #e53935;
+}
+
+/* Boton de variantes en naranja */
+.btn-variantes {
+    background: #ff9800;
 }

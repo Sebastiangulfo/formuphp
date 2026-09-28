@@ -21,4 +21,12 @@ mysqli_query($con, "CREATE TABLE IF NOT EXISTS productos (
     precio DECIMAL(10,2),
     cantidad INT
 )");
+
+// Tabla de variantes (cada variante pertenece a un producto)
+mysqli_query($con, "CREATE TABLE IF NOT EXISTS variantes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    producto_id INT,
+    nombre VARCHAR(100),
+    cantidad INT
+)");
 ?>

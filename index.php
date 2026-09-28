@@ -41,6 +41,7 @@
         echo "<td>" . $fila['cantidad'] . "</td>";
         echo "<td>
                 <a href='editar.php?id=" . $fila['id'] . "'>Editar</a>
+                <a class='btn-variantes' href='variantes.php?producto_id=" . $fila['id'] . "'>Variantes</a>
                 <a href='eliminar.php?id=" . $fila['id'] . "'>Borrar</a>
               </td>";
         echo "</tr>";
