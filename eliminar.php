@@ -4,7 +4,7 @@ include 'db.php';
 
 $id = $_GET['id'];
 
-// Si el usuario ya confirmo, se borra
+// Si ya confirmo, se borra
 if (isset($_GET['confirmar'])) {
     mysqli_query($con, "DELETE FROM productos WHERE id=$id");
     header("Location: index.php");
@@ -15,15 +15,19 @@ if (isset($_GET['confirmar'])) {
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Producto</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-<h1>¿Seguro que quieres borrar este producto?</h1>
+<div class="caja">
+    <h1>🗑️ ¿Borrar este producto?</h1>
+    <p>Esta accion no se puede deshacer.</p>
 
-<a href="eliminar.php?id=<?php echo $id; ?>&confirmar=si">Si, borrar</a>
-<a href="index.php">No, volver</a>
+    <a class="btn btn-rojo" href="eliminar.php?id=<?php echo $id; ?>&confirmar=si">Si, borrar</a>
+    <a class="btn" href="index.php">No, volver</a>
+</div>
 
 </body>
 </html>

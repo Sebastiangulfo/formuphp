@@ -10,22 +10,25 @@ $producto = mysqli_fetch_assoc($resultado);
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Producto</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-<h1>Editar Producto</h1>
+<div class="caja">
+    <h1>✏️ Editar producto</h1>
 
-<form action="guardar.php" method="POST">
-    <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
-    <input type="text" name="nombre" value="<?php echo $producto['nombre']; ?>" required>
-    <input type="number" step="0.01" name="precio" value="<?php echo $producto['precio']; ?>" required>
-    <input type="number" name="cantidad" value="<?php echo $producto['cantidad']; ?>" required>
-    <button type="submit">Actualizar</button>
-</form>
+    <form action="guardar.php" method="POST">
+        <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
+        <input type="text" name="nombre" value="<?php echo $producto['nombre']; ?>" required>
+        <input type="number" step="0.01" name="precio" value="<?php echo $producto['precio']; ?>" required>
+        <input type="number" name="cantidad" value="<?php echo $producto['cantidad']; ?>" required>
+        <button type="submit">Actualizar</button>
+    </form>
 
-<a href="index.php">Volver</a>
+    <a class="volver" href="index.php">← Volver a productos</a>
+</div>
 
 </body>
 </html>

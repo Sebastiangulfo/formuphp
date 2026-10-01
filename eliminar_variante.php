@@ -20,15 +20,19 @@ if (isset($_GET['confirmar'])) {
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar variante</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-<h1>¿Seguro que quieres borrar esta variante?</h1>
+<div class="caja">
+    <h1>🗑️ ¿Borrar esta variante?</h1>
+    <p>Esta accion no se puede deshacer.</p>
 
-<a href="eliminar_variante.php?id=<?php echo $id; ?>&confirmar=si">Si, borrar</a>
-<a href="variantes.php?producto_id=<?php echo $producto_id; ?>">No, volver</a>
+    <a class="btn btn-rojo" href="eliminar_variante.php?id=<?php echo $id; ?>&confirmar=si">Si, borrar</a>
+    <a class="btn" href="variantes.php?producto_id=<?php echo $producto_id; ?>">No, volver</a>
+</div>
 
 </body>
 </html>

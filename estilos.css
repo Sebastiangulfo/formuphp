@@ -1,192 +1,299 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
-    padding: 30px 15px;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    color: #333;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* ===== Estructura con barra lateral ===== */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 230px;
+    background: #111827;
+    color: #cbd5e1;
+    padding: 25px 15px;
+    flex-shrink: 0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.nav-item {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-item:hover {
+    background: #1f2937;
+    color: #fff;
+}
+
+.nav-item.activo {
+    background: #14b8a6;
+    color: #fff;
+}
+
+.main {
+    flex: 1;
+    padding: 35px 40px;
+}
+
+/* Secciones (se muestran/ocultan con el menu) */
+.seccion {
+    display: none;
+}
+
+.seccion.activa {
+    display: block;
 }
 
 h1 {
-    text-align: center;
-    color: #fff;
-    font-size: 34px;
+    margin: 0 0 10px;
+    font-size: 26px;
+    color: #0f172a;
+}
+
+.intro {
+    color: #64748b;
     margin-bottom: 25px;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
-h2 {
-    text-align: center;
-    color: #fff;
-    margin-top: 40px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* Formulario tipo tarjeta */
-form {
-    max-width: 500px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-}
-
-input {
-    flex: 1 1 45%;
-    padding: 11px;
-    border: 2px solid #e5e5e5;
-    border-radius: 8px;
-    font-size: 14px;
-}
-
-input:focus {
-    outline: none;
-    border-color: #2575fc;
-    box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.15);
-}
-
-button {
-    flex: 1 1 100%;
-    padding: 13px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.1s, opacity 0.2s;
-}
-
-button:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-}
-
-/* Tabla tipo tarjeta */
-table {
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 14px;
-    overflow: hidden;
-    border-collapse: collapse;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-th {
-    background: #4a148c;
-    color: #fff;
-    padding: 14px;
-    text-align: left;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-td {
-    padding: 12px 14px;
-    border-bottom: 1px solid #eee;
-}
-
-tr:nth-child(even) td {
-    background: #f7f7ff;
-}
-
-tr:hover td {
-    background: #eef2ff;
-}
-
-/* Enlaces / botones de accion */
-a {
-    display: inline-block;
-    padding: 7px 14px;
-    border-radius: 6px;
-    background: #2575fc;
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-    margin: 4px;
-    transition: opacity 0.2s;
-}
-
-a:hover {
-    opacity: 0.85;
-}
-
-/* En la tabla: el ultimo enlace (Borrar) en rojo */
-td a:last-of-type {
-    background: #e53935;
-}
-
-/* Boton de variantes en naranja */
-.btn-variantes {
-    background: #ff9800;
-}
-
-/* Encabezado con contexto */
-.cabecera {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.cabecera p {
-    color: #f0eaff;
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 15px;
-}
-
-/* Tarjetas de resumen */
+/* ===== Tarjetas de resumen ===== */
 .tarjetas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    max-width: 850px;
-    margin: 0 auto 30px auto;
+    gap: 20px;
 }
 
 .tarjeta {
     background: #fff;
     border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    padding: 20px 30px;
-    text-align: center;
-    flex: 1 1 180px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    padding: 25px;
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-left: 5px solid #14b8a6;
+}
+
+.icono {
+    font-size: 26px;
 }
 
 .numero {
-    display: block;
     font-size: 28px;
     font-weight: bold;
-    color: #4a148c;
+    color: #0f172a;
 }
 
 .texto {
-    display: block;
-    color: #777;
+    color: #64748b;
     font-size: 14px;
-    margin-top: 5px;
 }
 
-/* Mensaje cuando no hay productos */
-.vacio {
-    text-align: center;
+/* ===== Paneles / tarjetas de contenido ===== */
+.panel {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.panel h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #0f172a;
+}
+
+/* ===== Formularios ===== */
+form.fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+form.fila input {
+    flex: 1 1 150px;
+}
+
+input,
+select {
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+    border-color: #14b8a6;
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+}
+
+button {
+    padding: 11px 22px;
+    background: #14b8a6;
     color: #fff;
-    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-/* Pie de pagina */
-.pie {
-    text-align: center;
-    color: #f0eaff;
-    margin-top: 40px;
+button:hover {
+    background: #0d9488;
+}
+
+/* Buscador */
+#buscador {
+    margin-bottom: 18px;
+}
+
+/* ===== Tabla ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    background: #f8fafc;
+    color: #475569;
     font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eef2f7;
+}
+
+tbody tr:hover td {
+    background: #f8fafc;
+}
+
+/* ===== Enlaces de accion ===== */
+td a {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #3b82f6;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+td a:hover {
+    opacity: 0.85;
+}
+
+.btn-variantes {
+    background: #f59e0b !important;
+}
+
+.btn-borrar {
+    background: #ef4444 !important;
+}
+
+.vacio {
+    color: #64748b;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ===== Paginas sueltas (editar, eliminar, variantes) ===== */
+.caja {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    padding: 30px;
+}
+
+.caja h1 {
+    margin-bottom: 20px;
+}
+
+.caja form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 10px;
+    color: #14b8a6;
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+    padding: 0;
+}
+
+/* Botones tipo enlace (paginas de confirmacion) */
+.btn {
+    display: inline-block;
+    padding: 11px 22px;
+    background: #14b8a6;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.btn:hover {
+    background: #0d9488;
+}
+
+.btn-rojo {
+    background: #ef4444;
+}
+
+.btn-rojo:hover {
+    background: #dc2626;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 700px) {
+    .layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .main {
+        padding: 20px;
+    }
 }
