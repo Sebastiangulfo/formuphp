@@ -13,11 +13,11 @@
 
     <!-- Barra lateral para cambiar de seccion -->
     <aside class="sidebar">
-        <div class="logo">🛒 MiTienda</div>
+        <div class="logo">MiTienda</div>
         <nav>
-            <a href="#" class="nav-item activo" data-sec="inicio">🏠 Inicio</a>
-            <a href="#" class="nav-item" data-sec="productos">📦 Productos</a>
-            <a href="#" class="nav-item" data-sec="acerca">ℹ️ Acerca de</a>
+            <a href="#" class="nav-item activo" data-sec="inicio">Inicio</a>
+            <a href="#" class="nav-item" data-sec="productos">Productos</a>
+            <a href="#" class="nav-item" data-sec="acerca">Acerca de</a>
         </nav>
     </aside>
 
@@ -38,17 +38,14 @@
 
             <div class="tarjetas">
                 <div class="tarjeta">
-                    <span class="icono">📦</span>
                     <span class="numero"><?php echo $total; ?></span>
                     <span class="texto">Productos</span>
                 </div>
                 <div class="tarjeta">
-                    <span class="icono">🔢</span>
                     <span class="numero"><?php echo $unidades; ?></span>
                     <span class="texto">Unidades en stock</span>
                 </div>
                 <div class="tarjeta">
-                    <span class="icono">💰</span>
                     <span class="numero">$<?php echo number_format($valor, 2); ?></span>
                     <span class="texto">Valor del inventario</span>
                 </div>
@@ -60,7 +57,7 @@
             <h1>Productos</h1>
 
             <div class="panel">
-                <h2>➕ Agregar producto</h2>
+                <h2>Agregar producto</h2>
                 <form action="guardar.php" method="POST" class="fila">
                     <input type="text" name="nombre" placeholder="Nombre del producto" required>
                     <input type="number" step="0.01" name="precio" placeholder="Precio" required>
@@ -70,8 +67,8 @@
             </div>
 
             <div class="panel">
-                <h2>📋 Lista de productos</h2>
-                <input type="text" id="buscador" placeholder="🔍 Buscar producto por nombre...">
+                <h2>Lista de productos</h2>
+                <input type="text" id="buscador" placeholder="Buscar producto por nombre...">
 
                 <table id="tabla">
                     <thead>

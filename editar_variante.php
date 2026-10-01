@@ -17,7 +17,7 @@ $variante = mysqli_fetch_assoc($res);
 <body>
 
 <div class="caja">
-    <h1>✏️ Editar variante</h1>
+    <h1>Editar variante</h1>
 
     <form action="guardar_variante.php" method="POST">
         <input type="hidden" name="id" value="<?php echo $variante['id']; ?>">
@@ -27,7 +27,7 @@ $variante = mysqli_fetch_assoc($res);
         <button type="submit">Actualizar</button>
     </form>
 
-    <a class="volver" href="variantes.php?producto_id=<?php echo $variante['producto_id']; ?>">← Volver</a>
+    <a class="volver" href="variantes.php?producto_id=<?php echo $variante['producto_id']; ?>">Volver</a>
 </div>
 
 </body>

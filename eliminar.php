@@ -22,7 +22,7 @@ if (isset($_GET['confirmar'])) {
 <body>
 
 <div class="caja">
-    <h1>🗑️ ¿Borrar este producto?</h1>
+    <h1>¿Borrar este producto?</h1>
     <p>Esta accion no se puede deshacer.</p>
 
     <a class="btn btn-rojo" href="eliminar.php?id=<?php echo $id; ?>&confirmar=si">Si, borrar</a>

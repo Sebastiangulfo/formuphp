@@ -17,7 +17,7 @@ $producto = mysqli_fetch_assoc($resultado);
 <body>
 
 <div class="caja">
-    <h1>✏️ Editar producto</h1>
+    <h1>Editar producto</h1>
 
     <form action="guardar.php" method="POST">
         <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
@@ -27,7 +27,7 @@ $producto = mysqli_fetch_assoc($resultado);
         <button type="submit">Actualizar</button>
     </form>
 
-    <a class="volver" href="index.php">← Volver a productos</a>
+    <a class="volver" href="index.php">Volver a productos</a>
 </div>
 
 </body>

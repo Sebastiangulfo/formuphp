@@ -19,7 +19,7 @@ $producto = mysqli_fetch_assoc($res);
 <body>
 
 <div class="caja">
-    <h1>🎨 Variantes de: <?php echo $producto['nombre']; ?></h1>
+    <h1>Variantes de: <?php echo $producto['nombre']; ?></h1>
 
     <!-- Formulario para agregar una variante -->
     <form action="guardar_variante.php" method="POST">
@@ -56,7 +56,7 @@ $producto = mysqli_fetch_assoc($res);
         </tbody>
     </table>
 
-    <a class="volver" href="index.php">← Volver a productos</a>
+    <a class="volver" href="index.php">Volver a productos</a>
 </div>
 
 </body>
