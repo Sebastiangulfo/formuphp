@@ -129,3 +129,64 @@ td a:last-of-type {
 .btn-variantes {
     background: #ff9800;
 }
+
+/* Encabezado con contexto */
+.cabecera {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecera p {
+    color: #f0eaff;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+/* Tarjetas de resumen */
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 850px;
+    margin: 0 auto 30px auto;
+}
+
+.tarjeta {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 20px 30px;
+    text-align: center;
+    flex: 1 1 180px;
+}
+
+.numero {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a148c;
+}
+
+.texto {
+    display: block;
+    color: #777;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Mensaje cuando no hay productos */
+.vacio {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Pie de pagina */
+.pie {
+    text-align: center;
+    color: #f0eaff;
+    margin-top: 40px;
+    font-size: 13px;
+}
